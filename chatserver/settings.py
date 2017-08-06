@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#params for scripted bot
+BOT_PARAMS = {
+    'questionaire': 'basic background',
+}
+
 
 # Application definition
 
@@ -37,7 +42,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bot'
+    'bot',
+    'channel'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -51,7 +57,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'chatbot.urls'
+ROOT_URLCONF = 'chatserver.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'chatbot.wsgi.application'
+WSGI_APPLICATION = 'chatserver.wsgi.application'
 
 
 # Database
