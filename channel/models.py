@@ -6,7 +6,7 @@ import datetime
 
 class Conversation(models.Model):
     """
-    The converstation is initiated and terminated by the client (browser)
+    The conversation is initiated and terminated by the client (browser)
     """
     name = models.CharField(max_length=100, null=False, blank=False)
     description = models.CharField(max_length=700, null=False, blank=False)
@@ -23,3 +23,7 @@ class Verbiage(models.Model):
     timestamp = models.DateTimeField(default=datetime.datetime.now, null=False, blank=False)
     text = models.CharField(max_length=100, null=False, blank=False)
     agent = models.CharField(max_length=100, null=False, blank=False)
+
+
+    class Meta:
+        ordering = ('timestamp',)

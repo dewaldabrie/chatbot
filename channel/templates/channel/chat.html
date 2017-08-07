@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to the chatserver</title>
+    <style>
+        div#chatboard {
+        width: 60%;
+        margin: 0 auto;
+        border: solid 20px grey;
+        background=color: #aaf;
+        }
+        span.avitar {
+        font-weight: bold;
+        color: black;
+        }
+        span.timestamp {
+        color: grey;
+        font-size: 8pt;
+        }
+        div.bot, div.user {
+            color: black;
+            font-style: italic;
+            width: 80%;
+            display: block;
+            padding: 20px;
+            margin: 10px;
+        }
+        div.bot {
+            float: left;
+            background-color: #afa;
+        }
+        div.user {
+            float: right;
+            background-color: #aaf;
+        }
+        input#chat_input {
+            width:60%;
+            line-height: 150px;
+            margin:0 auto;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16pt;
+        }
+        hr#clearer {
+            display: block;
+            width: 100%;
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="chatboard">
+    {% for message in messages %}
+    <div class="{{message.agent}}">
+        <span class="avitar">{{message.agent}}</span>
+        <span class="timestamp">{{message.timestamp.time}}</span>
+        {{message.text}}
+    </div>
+
+    {% endfor %}
+    <hr id="clearer" />
+
+    {% if not done %}
+    <form action="/user_to_channel" method="get">
+        <input type="hidden" name="response_to" value="{{latest_bot_message_id}}" />
+        <input type="hidden" name="client_token" value="{{client_token}}" />
+        <input type="hidden" name="conversation_token" value="{{conversation_token}}" />
+        <input id="chat_input" type="text" name="client_message" value="" size="100"/>
+        <button type="submit">Send</button>
+    </form>
+    {% else %}
+    <a href="/done"><button>Done</button></a>
+    {% endif %}
+</div>
+
+</body>
+</html>

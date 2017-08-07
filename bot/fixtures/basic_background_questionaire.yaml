@@ -1,0 +1,66 @@
+- model: bot.Questionaire
+  pk: 1
+  fields:
+    name: basic background
+    description: basic questions about client identidy and health background
+    date_created: 2017-08-06 08:00:00
+
+- model: bot.Question
+  pk: 1
+  fields:
+    name: intro
+    questionaire: 1
+    after: null
+    question_text: Hello I am going to ask you few questions that will help me know you better?
+    date_created: 2017-08-06 08:00:00
+    wait_for_response: False
+
+- model: bot.question
+  pk: 2
+  fields:
+    name: name
+    questionaire: 1
+    after: 1
+    question_text: What is your name?
+    date_created: 2017-08-06 08:00:10
+    wait_for_response: True
+  
+- model: bot.question
+  pk: 3
+  fields:
+    name: gender
+    questionaire: 1
+    after: 2
+    question_text: Are you male or female?
+    date_created: 2017-08-06 08:00:20
+    wait_for_response: True
+
+- model: bot.question
+  pk: 4
+  fields:
+    name: birthday
+    questionaire: 1
+    after: 3
+    question_text: When were you born (dd-mm-yyyy)?
+    date_created: 2017-08-06 08:00:20
+    wait_for_response: True
+
+- model: bot.question
+  pk: 5
+  fields:
+    name: smoking
+    questionaire: 1
+    after: 4
+    question_text: Are you a smoker?
+    date_created: 2017-08-06 08:00:20
+    wait_for_response: True
+
+- model: bot.question
+  pk: 6
+  fields:
+    name: bye
+    questionaire: 1
+    after: 5
+    question_text: Thank you. Press "Done" for results.
+    date_created: 2017-08-06 08:00:20
+    wait_for_response: True
