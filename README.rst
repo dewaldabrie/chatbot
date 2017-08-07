@@ -24,9 +24,11 @@ Browse to localhost:8000 and have a nice chat!
 Additional features to add
 ==========================
 The following can be added:
+
 * Expand functional tests
 * Add unit tests
+* Make use of django base template
 * Use AJAX calls in UI
-* Use websockets instead of HTTP
+* Use websockets instead of HTTP (django channels)
 * Have multiple configurable bots
 * Create AI bot
