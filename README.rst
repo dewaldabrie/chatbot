@@ -25,9 +25,11 @@ Additional features to add
 ==========================
 The following can be added:
 
+* Pin requirements with something like pip compile
 * Expand functional tests
 * Add unit tests
 * Make use of django base template
+* Upgrade look and feel
 * Use AJAX calls in UI
 * Use websockets instead of HTTP (django channels)
 * Have multiple configurable bots
